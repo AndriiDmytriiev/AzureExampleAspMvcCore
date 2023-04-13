@@ -16,10 +16,10 @@ namespace WebApplication2.Pages
 
         public CalcModel(ILogger<IndexModel> logger)
         {
-            var connectionString = "Server=tcp:server14235.database.windows.net,1433;Initial Catalog=newdb;Persist Security Info=False;User ID=sa124312;Password=123123Ye$;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            var connectionString = "Server=tcp:server14235.database.windows.net,1433;Initial Catalog=newdb;Persist Security Info=False;User ID=sa124312;Password=pass;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             using (var conn = new SqlConnection(connectionString))
             {
-                var strQuery = "SELECT [Body] FROM [dbo].[Articles] where ID=1";
+                var strQuery = "SELECT [Body] FROM [Articles] where ID=1";
                 conn.Open();
                 SqlCommand command1 = new SqlCommand(strQuery, conn);
                 var cmdSelectFromProduct = command1.ExecuteScalar();
